@@ -17,7 +17,7 @@ public class Repo {
 
     public Repo(Application application) {
         ContactDataBase contactDataBase = ContactDataBase.getInstance(application);
-        this.contactsDAO = contactDataBase.getContactsDAO();
+        this.contactsDAO = contactDataBase.getContactDAO();
         executorService= Executors.newSingleThreadExecutor();
         handler = new Handler(Looper.getMainLooper());
     }

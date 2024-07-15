@@ -7,19 +7,28 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {Contacts.class} , version = 1)
-public abstract class ContactDataBase extends RoomDatabase {
+public abstract class ContactDataBase extends RoomDatabase{
 
-    public abstract ContactsDAO getContactsDAO();
+    public abstract ContactsDAO getContactDAO();
+
+    // Singleton Pattern
     private static ContactDataBase dbInstance;
+
     public static synchronized ContactDataBase getInstance(Context context){
-        if(dbInstance == null){
+
+        if (dbInstance == null){
             dbInstance = Room.databaseBuilder(
-                    context.getApplicationContext(),
-                    ContactDataBase.class,
-                    "contacts_database"
-            ).fallbackToDestructiveMigration().build();
+                            context.getApplicationContext(),
+                            ContactDataBase.class,
+                            "contacts_db").
+                    fallbackToDestructiveMigration()
+                    .build();
         }
         return dbInstance;
-
     }
+
+
+
+
 }
+
