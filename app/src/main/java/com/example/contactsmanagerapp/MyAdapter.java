@@ -1,6 +1,5 @@
 package com.example.contactsmanagerapp;
 
-
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 

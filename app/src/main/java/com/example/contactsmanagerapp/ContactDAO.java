@@ -7,12 +7,17 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
 @Dao
-public interface ContactsDAO {
+public interface ContactDAO {
+
     @Insert
-    void insert(Contacts contacts);
+    void insert(Contacts contact);
+
     @Delete
-    void delete(Contacts contacts);
+    void delete(Contacts contact);
+
     @Query("SELECT * FROM contacts_table")
     LiveData<List<Contacts>> getAllContacts();
 }
+
