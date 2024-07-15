@@ -2,6 +2,11 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
+    <data>
+        <variable
+            name="contact"
+            type="com.example.contactsmanagerapp.Contacts" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="16dp"
@@ -14,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Name"
+            android:text="@{contact.name}"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
-            android:text="Email"
+            android:text="@{contact.email}"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
